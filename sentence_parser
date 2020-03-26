@@ -1,0 +1,77 @@
+% Set some Prolog options.
+% Changing max_depth from default 10 to 0 means it will write out
+% the full tree no matter how deep. The other options remain at
+% their default values, but will disappear if not repeated here.
+
+:- set_prolog_flag(answer_write_options,[quoted(true),portray(true),
+       max_depth(0),spacing(next_argument)]).
+
+% *** Phrase Structure Rules ***
+% s - sentence
+% np - noun phrase
+% vp - verb phrase
+
+s([s,NP,VP],P0,P) :- np(NP,NUM,P0,P1), vp(VP,NUM,P1,P).
+
+np([np,DET,NOUN,PP],NUM,P0,P) :‐ det(DET,NUM,P0,P1), noun(NOUN,NUM,P1,P2), pp(PP,P2,P). 
+
+vp([vp,IV,PP],NUM,P0,P) :‐ iv(IV,NUM,P0,P1), pp(PP,P1,P). 
+vp([vp,TV,NP,PP],NUM,P0,P) :‐ tv(TV,NUM,P0,P1), np(NP,_,P1,P2), pp(PP,P2,P). 
+
+pp([pp,PREP,NP],P0,P) :‐ prep(PREP,P0,P1), np(NP,_,P1,P). 
+
+% *** The Lexicon ***
+% det - determiner
+% noun - noun
+% iv - intransitive verb
+% tv - transitive verb
+
+det([det,a],sing,[a|Rest],Rest).
+det([det,the],sing,[the|Rest],Rest).
+det([det,the],plur,[the|Rest],Rest).
+
+noun([noun,kid],sing,[kid|Rest],Rest).
+noun([noun,kids],plur,[kids|Rest],Rest).
+noun([noun,sheriff],sing,[sheriff|Rest],Rest).
+noun([noun,sheriffs],plur,[sheriffs|Rest],Rest).
+noun([noun,spy],sing,[spy|Rest],Rest).
+noun([noun,spies],plur,[spies|Rest],Rest).
+noun([noun,lab],sing,[lab|Rest],Rest).
+noun([noun,labs],plur,[labs|Rest],Rest).
+noun([noun,demogorgon],sing,[demogorgon|Rest],Rest).
+noun([noun,demogorgons],plur,[demogorgons|Rest],Rest).
+noun([noun,telescope],sing,[telescope|Rest],Rest).
+
+iv([iv,talks],sing,[talks|Rest],Rest).
+iv([iv,talk],plur,[talk|Rest],Rest).
+iv([iv,hides],sing,[hides|Rest],Rest).
+iv([iv,hide],plur,[hide|Rest],Rest).
+
+tv([tv,sees],sing,[sees|Rest],Rest).
+tv([tv,see],plur,[see|Rest],Rest).
+
+prep([prep,with],[with|Rest],Rest). 
+
+%**********************************************************
+% Convenience Predicates
+%**********************************************************
+
+% Replaces commas with spaces in a string.
+% This code uses regular expressions, which are provided
+% via the PCRE library.
+
+:- use_module(library(pcre)).
+
+convert_commas(Before,After) :-
+    re_replace(","/g, " ", Before, After).
+
+% The top-level call for parsing a sentence.
+% WordList is the sentence to be parsed.
+% TreeString is a string of the parse tree suitable for feeding
+%   to jsSyntaxTree.
+% term_string() converts a list to a corresponding string.
+
+parse(TreeString, WordList) :-
+    s(TreeList,WordList,[]),
+    term_string(TreeList, TreeStringWithCommas),
+    convert_commas(TreeStringWithCommas, TreeString).
