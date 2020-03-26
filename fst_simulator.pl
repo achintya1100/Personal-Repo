@@ -1,6 +1,3 @@
-% FST_Simulator.pl
-% 185:416 Minds, Machines & Computation
-%
 % Simulates an FST.
 % Example Query: fst([a,a,b,b],Output).
 %
