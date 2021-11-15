@@ -25,5 +25,5 @@ CS440 - Introduction to Artificial Intelligence(Python)
   •Colorization(Mean Squared Error, Gradient Descent(Polynomial Regression), Support Vector Regression, XGBoost, SKLearn)
   
 CogSci416 - Advanced Topics Cognitive Science: Minds, Machines & Computation(ProLog)
-  •Finite State Automaton Simulator
+  •Finite State Transducer Simulator
   •Sentence Parser
