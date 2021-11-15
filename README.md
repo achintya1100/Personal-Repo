@@ -12,6 +12,7 @@ CS211 - Computer Architecture(C, Assembly x86-64)
   •Data Structures
   •Graphs
   •Bomb Lab(x86 ISA)
+  •Digital Logic Design
   •L1 + L2 Cache Simulator
   
 CS336 - Principles of Information and Database Management(Java-JDBC, MySQL, HTML, Apache Tomcat)
