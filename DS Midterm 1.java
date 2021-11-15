@@ -48,10 +48,3 @@ public static void doRightSize(Node root)
 		rightSize = 1+ doRightSize(root.left())+ doRight(root.right()) ;
 	}
 }
-
-
-
-Question 4
-
-
-
