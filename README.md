@@ -1,6 +1,6 @@
 # ReadMe
 
-Compilation of programming projects in various languages.
+Compilation of some programming projects in various languages.
 
 CS112 - Data Structures(Java)
   •Friends
