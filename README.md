@@ -16,7 +16,7 @@ CS211 - Computer Architecture(C, Assembly x86-64)
   •L1 + L2 Cache Simulator
   
 CS336 - Principles of Information and Database Management(Java-JDBC, MySQL, HTML, Apache Tomcat)
-  •Online Travel Registration System
+  •Online Travel Reservation System
   
 CS440 - Introduction to Artificial Intelligence(Python)
   •Maze on Fire(BFS, DFS, A*, Custom Shortest-Path Implementation)
