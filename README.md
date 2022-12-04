@@ -1,4 +1,4 @@
-# ReadMe
+#ReadMe
 
 Compilation of some programming projects in various languages.
 
@@ -7,6 +7,11 @@ CS112 - Data Structures(Java)
   •Little Search Engine
   •Polynomial
   •PolyTest
+  •Midterm 1
+  
+CS210 - Data Management for Data Science(Python)
+  •Covid.py
+  •TF-IDF(Term Frequency, Inverse Document Frequency)
   
 CS211 - Computer Architecture(C, Assembly x86-64)
   •Data Structures
