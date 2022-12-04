@@ -24,6 +24,11 @@ CS440 - Introduction to Artificial Intelligence(Python)
   •Probabilistic Search & Destroy
   •Colorization(Mean Squared Error, Gradient Descent(Polynomial Regression), Support Vector Regression, XGBoost, SKLearn)
   
+ CS462 - Introduction to Deep Learning(Python)
+  •Linear Classifier
+  •Gradient Descent/Autograd
+  
 CogSci416 - Advanced Topics Cognitive Science: Minds, Machines & Computation(ProLog)
   •Finite State Transducer Simulator
   •Sentence Parser
+
